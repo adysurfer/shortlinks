@@ -40,7 +40,7 @@ describe('Validate QR code generator', function () {
         commonUtilsPage.validateCreatedQRCode()
         // Download QR as <Download PNG, .SVG, .PDF*, .EPS*> file
         commonUtilsPage.downloadQRFile('Download PNG')
-        // Validate if file is downloaded
+        // Validate if file is downloaded <png, svg, pdf, eps>
         commonUtilsPage.validateIfQRFileDownloaded('png')
     })
     it('Validate QR code customization options', { tags: '@smoke' }, function () {
