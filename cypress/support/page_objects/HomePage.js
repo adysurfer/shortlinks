@@ -17,6 +17,4 @@ export class HomePage {
         cy.get('[name="urlForm"] div small').should('not.have.class', 'ng-hide')
     }
 }
-
-
 export const homePage = new HomePage()

@@ -72,7 +72,7 @@ describe('Validate QR code generator', function () {
         // create and validate QR code with applied QR template
         commonUtilsPage.validateCreatedQRCode()
     })
-    it.only('Validate if QR sizing slider can be dragged horizontally', { tags: '@smoke' }, function () {
+    it('Validate if QR sizing slider can be dragged horizontally', { tags: '@smoke' }, function () {
         // right drag the slider and validate
         commonUtilsPage.validateSliderRightDrag()
         // left drag the slider and validate
