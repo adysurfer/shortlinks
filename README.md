@@ -1,4 +1,4 @@
-# cypress-cucumber-e2e-testing
+# cypress-e2e-testing
 
 Clone repo using: `git clone https://github.com/adysurfer/shortlinks.git`
 
