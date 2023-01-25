@@ -5,7 +5,7 @@ describe('Validate QR code generator', function () {
     // this code block will execute once before all tests
     beforeEach('Navigate to HomePage', function () {
         // if mobile test, default is set to Desktop
-        // cy.viewport('iphone-8')
+        //cy.viewport(Cypress.env('iphone'))
         // visit QR Code generator page
         homePage.openHomePage()
         // disabled buttons for all types of inputs <url, phone, sms, etc> initially

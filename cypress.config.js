@@ -38,11 +38,13 @@ module.exports = defineConfig({
   },
   env: {
     // Grep options for triggering tests
-    grepFilterSpecs: true
+    grepFilterSpecs: true,
+    iphone: 'iphone-8'
   },
   retries: {
     runMode: 2,
     openMode: 2
   }
 })
+
 
