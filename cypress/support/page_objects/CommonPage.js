@@ -92,6 +92,23 @@ export class CommonPage {
         // Click on logo panel
         cy.contains('Add Logo Image').click()
     }
+    validateLogoUpload() {
+        cy.intercept('POST', '//qr/uploadimage').as('uploadLogo')
+        //ng-file-upload uses a hidden input for file uploads
+        cy.get('input[type="file"]')
+        .selectFile('cypress/fixtures/code.png', { force:true })
+        cy.wait('@uploadLogo').then(function (xhr) {
+            //sucessful upload of logo (not oversized image)
+            expect(xhr.response.statusCode).to.equal(200)
+            expect(JSON.parse(xhr.response.body).file).to.include('.png')
+        })
+        cy.get('[ng-show="fileSizeError"]').should('not.be.visible')
+        cy.get('input[type="file"]')
+        // select oversized image
+        .selectFile('cypress/fixtures/5mb.png', { force:true })
+        // validate oversized images, validation message presence
+        cy.get('[ng-show="fileSizeError"]').should('be.visible')
+    }
     selectAndApplyLogoImage() {
         // randomly select on logo categories option
         cy.get('.shape-options').each(function ($el) {

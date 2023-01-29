@@ -1,7 +1,7 @@
 export class HomePage {
     openHomePage() {
         // visit QR Code generator page
-        cy.visit('https://www.qrcode-monkey.com/')
+        cy.visit('/')
         cy.contains('button', 'Accept All Cookies').click()
     }
 

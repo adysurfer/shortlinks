@@ -55,6 +55,8 @@ describe('Validate QR code generator', function () {
     it('Validate create a QR code with logo image', { tags: '@smoke' }, function () {
         // click on logo panel
         commonUtilsPage.clickLogoPanel()
+        // validate oversized and successful logo upload via file-upload feature
+        commonUtilsPage.validateLogoUpload() 
         // select and apply logo image at random
         commonUtilsPage.selectAndApplyLogoImage()
         // create and validate QR code with applied Logo
